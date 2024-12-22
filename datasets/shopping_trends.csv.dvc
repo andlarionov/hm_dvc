@@ -1,0 +1,6 @@
+outs:
+- md5: 2c08b5fc431fa75d81cb90aa2092e398
+  size: 453248
+  isexec: true
+  hash: md5
+  path: shopping_trends.csv
