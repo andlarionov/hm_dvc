@@ -1,0 +1,15 @@
+schema: '2.0'
+stages:
+  data_processing:
+    cmd: python src/data_create.py
+    deps:
+    - path: datasets/shopping_trends.csv
+      hash: md5
+      md5: 2c08b5fc431fa75d81cb90aa2092e398
+      size: 453248
+      isexec: true
+    outs:
+    - path: datasets/df.csv
+      hash: md5
+      md5: 83c0010001b98a6099d66e0c84409389
+      size: 107261
