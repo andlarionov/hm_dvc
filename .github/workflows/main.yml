@@ -18,10 +18,16 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-        pip install dvc[google]
+        pip install dvc[google]==3.58.0  # Установка DVC версии 3.58.0
 
     - name: Set up Google Drive credentials
       run: echo "${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}" > /tmp/service-account.json
+
+    - name: Check if service account file exists
+      run: ls -l /tmp/service-account.json  # Проверка существования файла
+
+    - name: Show current DVC configuration
+      run: dvc config --list  # Проверка текущей конфигурации DVC
 
     - name: Configure DVC to use Google Drive
       run: |
@@ -33,3 +39,6 @@ jobs:
         dvc pull  # Синхронизация данных из удаленного хранилища
         dvc repro  # Запуск пайплайна
         dvc push  # Отправка результатов обратно в удаленное хранилище
+
+    - name: Check DVC version
+      run: dvc --version  # Проверка установленной версии DVC
