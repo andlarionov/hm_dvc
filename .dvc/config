@@ -1,0 +1,5 @@
+[core]
+    remote = hw_dvc
+['remote "hw_dvc"']
+    url = gdrive://1NbTQk-aP1g2hgbbJZKMmxLHw1DD7mvn6?hl=ru
+    gdrive_use_service_account = true
