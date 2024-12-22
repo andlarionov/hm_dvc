@@ -1,0 +1,7 @@
+stages:
+  data_processing:
+    cmd: python src/data_create.py
+    deps:
+      - datasets/shopping_trends.csv
+    outs:
+      - datasets/df.csv
